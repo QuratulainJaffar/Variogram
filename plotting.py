@@ -1,7 +1,24 @@
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FixedFormatter
 
+plt.rcParams.update( {'font.size':7,
+                      'font.family': "Arial",
+                      'axes.formatter.limits': (-3, 3),
+                      'axes.formatter.use_mathtext': True} )
+
 def plot_seismic_and_fd(time_axis, data, time_labels, fractal_dimensions):
+    '''
+
+    Args:
+        time_axis:
+        data:
+        time_labels:
+        fractal_dimensions:
+
+    Returns:
+
+    '''
+
     fig, ax = plt.subplots(2, 1, figsize=(10, 6), sharex=True)
 
     # Plot 1: Seismic waveform
