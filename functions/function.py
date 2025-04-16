@@ -9,16 +9,15 @@
 import numpy as np
 
 def calculate_variogram(data, sampling_rate):
-    '''
-    Say something about the purpose of the funcs, it would be great you give a equation or ref to let the people understand this
+    """Calculate the variogram of the input data.
+
     Args:
-        data: data type? (int, numpy 1D or 2D array? or list or?), say something about this parameter? otherwise, nore can understnad this
-        sampling_rate:
+        data: Time series data.
+        sampling_rate: Sampling rate in Hz.
 
     Returns:
-        tau_list: data type? what;s this?
-        gamma_tau_list
-    '''
+        A tuple containing time lags and corresponding variogram values.
+    """
     max_time_lag = len(data) # why use
     tau_list = np.arange(1, max_time_lag) / sampling_rate
     gamma_tau_list = np.zeros(max_time_lag - 1)
@@ -31,16 +30,15 @@ def calculate_variogram(data, sampling_rate):
     return tau_list, gamma_tau_list
 
 def calculate_fractal_dimension(variogram, sampling_rate):
-    '''
-    Say something about the purpose of the funcs, it would be great you give a equation or ref to let the people understand this
+    """Estimate the fractal dimension from a variogram.
+
     Args:
-        data: data type? (int, numpy 1D or 2D array? or list or?), say something about this parameter? otherwise, nore can understnad this
-        sampling_rate:
+        variogram: Variogram values.
+        sampling_rate: Sampling rate in Hz.
 
     Returns:
-        tau_list: data type? what;s this?
-        gamma_tau_list
-    '''
+        Estimated fractal dimension (rounded to 3 decimal places).
+    """
 
     tau = np.arange(1, len(variogram) + 1) / sampling_rate
     slope, _ = np.polyfit(np.log10(tau[:4]), np.log10(variogram[:4]), deg=1)
