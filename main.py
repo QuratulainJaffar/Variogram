@@ -5,26 +5,23 @@
 # __author__ = You name, GFZ Helmholtz Centre for Geosciences
 # __find me__ = your email and official web
 
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-txt')
+
 import obspy
 import numpy as np
 import time
 from datetime import timedelta
-
-# <editor-fold desc="add the sys.path to search for custom modules">
-from pathlib import Path
-current_dir = Path(__file__).resolve().parent
-# using ".parent" on a "pathlib.Path" object moves one level up the directory hierarchy
-project_root = current_dir # .parent
-import sys
-sys.path.append(str(project_root))
-# </editor-fold>
-
-# import the custom functions
 from processing import calculate_variogram, calculate_fractal_dimension
 from plotting import plot_seismic_and_fd
 
 def main():
-    file_path = "/.." ## input file path SAC format # you can use f"{current_dir or project_root}/to/where/you/want"
+"""Main function to process seismic data and calculate fractal dimensions."""
+"""Reads seismic data from a SAC file, processes it in time windows,
+calculates the fractal dimension of each segment, saves results to a file,
+and plots the results."""
+
+    file_path = "/.." ## input file path SAC format
     output_path = "/.." ## output file path txt format
 
     st = obspy.read(file_path)
