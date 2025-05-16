@@ -18,7 +18,7 @@ from plotting import plot_seismic_and_fd
 def main():
 """Main function to process seismic data and calculate fractal dimensions."""
 """Reads seismic data from a SAC file, processes it in time windows,
-calculates the fractal dimension of each segment, saves results to a file,
+calculates the fractal dimension of each segment of size of one minute, saves results to a file,
 and plots the results."""
 
     file_path = "/.." ## input file path SAC format
@@ -29,7 +29,7 @@ and plots the results."""
     sampling_rate = st[0].stats.sampling_rate
     start_datetime = st[0].stats.starttime.datetime
 
-    window_duration = 60
+    window_duration = 60 
     window_size = int(window_duration * sampling_rate)
     time_axis = [start_datetime + timedelta(seconds=i / sampling_rate) for i in range(len(data))]
 
