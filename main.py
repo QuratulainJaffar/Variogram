@@ -1,9 +1,9 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-# __modification time__ = 2025-01-20
-# __author__ = You name, GFZ Helmholtz Centre for Geosciences
-# __find me__ = your email and official web
+# __modification time__ = 2025-05-15
+# __author__ = Quratulain Jaffar, GFZ Helmholtz Centre for Geosciences
+# __find me__ = quratulain.jfr@gmail.com
 
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-txt')
